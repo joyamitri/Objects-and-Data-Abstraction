@@ -39,4 +39,28 @@ public class LinkedList {
             return count;
         }
     }
+
+    public boolean insert(int i, int k){
+        // insert k at index i, returns false if i is an invalid index, true otherwise
+
+        if(i < 0 || i > size()){
+            return false;
+        }
+        else{
+            Node n = new Node(k);
+            if (i == 0) {
+                n.setNext(header);
+                header = n;
+            }
+            else{
+                Node current = header;
+                for(int j = 0; j < i - 1; j++){
+                    current = current.getNext();
+                }
+                n.setNext(current.getNext());
+                current.setNext(n);
+            }
+            return true;
+        }
+    }
 }
