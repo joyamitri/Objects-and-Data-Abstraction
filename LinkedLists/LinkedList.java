@@ -63,4 +63,23 @@ public class LinkedList {
             return true;
         }
     }
+
+    public boolean delete(int i){
+        if(i < 0 || i > size() - 1){
+            return false;
+        }
+        else{
+            if(i == 0){
+                header = header.getNext();
+            }
+            else{
+                Node current = header;
+                for (int j = 0; j < i - 1; j++) {
+                    current = current.getNext();
+                }
+                current.setNext(current.getNext().getNext());
+            }
+            return true;
+        }
+    }
 }
