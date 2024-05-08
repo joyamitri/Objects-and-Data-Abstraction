@@ -21,4 +21,22 @@ public class LinkedList {
             current.setNext(new Node(i));
         }
     }
+
+    public int size(){
+        // returns # of nodes in the list
+
+        if(header == null){
+            return 0;
+        }
+        else{
+            int count = 0;
+            Node current = header;
+            while (current.getNext() != null) {
+                current = current.getNext();
+                count ++;
+            }
+
+            return count;
+        }
+    }
 }
